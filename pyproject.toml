@@ -1,0 +1,8 @@
+[project]
+name = "heartbeat-sensor"
+version = "0.1.0"
+description = "Heartbeat Sensor — heartbeat/sampling recorder for fleet metrics with silence detection"
+requires-python = ">=3.9"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
