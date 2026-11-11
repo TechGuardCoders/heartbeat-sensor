@@ -48,3 +48,15 @@ print(m.stats("queue_depth").p95)
 GitHub Actions runs `pytest` on push. Badge:
 
 [![CI](https://github.com/TechGuardCoders/heartbeat-sensor/actions/workflows/ci.yml/badge.svg)](https://github.com/TechGuardCoders/heartbeat-sensor/actions/workflows/ci.yml)
+
+## Docker
+
+Multi-stage, multi-arch (`linux/amd64` + `linux/arm64`), runs as non-root.
+
+```bash
+docker build -t heartbeat-sensor .
+docker run --rm heartbeat-sensor
+```
+
+The build stage runs the test suite as a gate; the runtime stage ships only
+the module on `python:3.12-slim` under a non-root user.
